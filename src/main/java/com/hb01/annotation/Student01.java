@@ -2,14 +2,16 @@ package com.hb01.annotation;
 
 import javax.persistence.*;
 
+//@Entity class demek DB ile bağlantı kuran class demektir.
+
 @Entity //@Entity ile Bu sınıfın DB de bir tabloya karşılık gelmesini sağlıyoruz. student01
 @Table(name="t_student01") //Eğer tablo ismini customize @Table annotation kullanırız.
                           //DB de tablo isminin "t_student01" olarak değişmesini sağladı
 
-//Java kodu içinde bu class'a ulaşırken Student01 ile, SQL ile ulaşirken t_student01 ile yazmam lazım.
+//Java kodu içinde bu class'a ulaşırken Student01 ile, SQL ile ulaşirken t_student01 ile yazmam lazım. Yoksa RTE.
 public class Student01 {
 
-    //@Entity annotation koyuyorsak bu fieldlardan bir tanesi primary key olur.
+    //Class a @Entity annotation koyuyorsak bu fieldlardan bir tanesi primary key olması lazım.
     @Id //->@Id annotation'u columnu primary key yapar.
     //@Column(name="std_id") -> Column ismini customize eder.
     private int id;
@@ -19,11 +21,12 @@ public class Student01 {
 
     //@Transient //->@Transient DB'deki tabloda grade isminde bir column oluşmasını engeller.
     //Bazı fieldların DB ile iletişimi olmasın isteyebiliriz. O zaman @Transient kullanırız.
+
     private int grade;
 
 //    @Lob //->@Lob large object ile buyuk boyutlu data gelecek diyoruz.
 //    Hibernate'e large object diye bildiriyoruz.
-//    private byte[] image; -> image gibi yapılar diğerlerine kıyasla büyük mb kaplarlar o yüzden @Lob kullanırız.
+//    private byte[] image; -> image gibi yapılar diğerlerine(int, String) kıyasla büyük mb kaplarlar o yüzden @Lob kullanırız.
 
 
 

@@ -24,13 +24,10 @@ public class RunnerSave01 {
         student3.setName("Fatih Deniz");
         student3.setGrade(90);
 
-        Configuration con = new Configuration().
-                configure("hibernate.cfg.xml").addAnnotatedClass(Student01.class);
-        // yukardaki satirda, Hibernate 'e konfigurasyon dosyami ve Entity classimi bildirdim
 
-        SessionFactory sf = con.buildSessionFactory();
-        Session session = sf.openSession();
-        Transaction tx = session.beginTransaction();
+        //Path tanımlıyoruz gibi DB ile iletişime geçmek icin bir Session olusturuyoruz.
+        Configuration con = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Student01.class); //->Entity classımızı belirtiyoruz.
+        SessionFactory session = con.buildSessionFactory();
 
 //         session.save(student1);
 //         session.save(student2);
