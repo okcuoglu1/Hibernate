@@ -26,16 +26,20 @@ public class RunnerSave01 {
 
 
         //Path tanımlıyoruz gibi DB ile iletişime geçmek icin bir Session olusturuyoruz.
+        //Aşağıdaki satırda Hibernate'e configuration dosyami ve Entity classimi bildiriyorum.
         Configuration con = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Student01.class); //->Entity classımızı belirtiyoruz.
-        SessionFactory session = con.buildSessionFactory();
 
-//         session.save(student1);
-//         session.save(student2);
-//         session.save(student3);
+        //Session olusturarak DB ve Hibernate arasında köprü olusturuyoruz.
+        SessionFactory sf = con.buildSessionFactory();
+        Session session = sf.openSession(); //->SessionFactory'den bana bir session aç demiş olduk.
+        Transaction tx = session.beginTransaction(); //->Transaction ile DB ile iletişime geçip CRUD yapmamızı saglıycak.
+
+       // session.save(student1);
+        session.save(student2);
+        session.save(student3);
 
 
-        tx.commit();
-
+        tx.commit(); //->Yapacağımız işlere onay veriyoruz.
         session.close();
         sf.close();
 
