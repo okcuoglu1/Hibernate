@@ -16,9 +16,11 @@ public class Student04 {
 
     private int grade;
 
-
-    @OneToOne(mappedBy = "student") //!!! sadece Diary tablosunda iliski icin yeni bir kolon
-    // olusmasini sagliyoruz
+    //ilişkiyi kuracak taraf student fielda sahip class.
+    //DBYE gitmeden kendi icinde hibernate mappedBy sayesinde classlar arası iletisimi saglıyor.
+    @OneToOne(mappedBy = "student") //!!! "student" variable nerdeyse ben orda join column yaptım diyoruz.
+   //mappedBY bize classlar arasında gezintiyi sağlar.Bunu yazmazsak DB de column olusturur. Biz onu istemiyoruz.
+    //Classlardan classlara fieldlara ulasmak istiyoruz.
     private Diary04 diary;
 
     //!!! Getter- Setter
