@@ -41,6 +41,7 @@ public class RunnerSave03 {
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
 
+        //studentları önce savelememiz gerek cünkü diaryde setStudent var.
         session.save(student1);
         session.save(student2);
         session.save(student3);

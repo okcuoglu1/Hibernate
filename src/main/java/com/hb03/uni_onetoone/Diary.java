@@ -13,7 +13,8 @@ public class Diary {
 
     private String name;
 
-    @OneToOne
+    @OneToOne //-> Bire bir ilişki kuracağımız zaman kullanırız.
+    //@JoinColumn ise olusturulan classda(diary) ilişkili olan tablodan bir column oluşturur.
     @JoinColumn(name="std_id")
     private Student03 student; // student_id
 
