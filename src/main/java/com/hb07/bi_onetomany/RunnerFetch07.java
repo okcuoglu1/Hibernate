@@ -36,7 +36,7 @@ public class RunnerFetch07 {
 //        List<Object[]> resultList2 = session.createQuery(hqlQuery).getResultList();
 //        resultList2.forEach(oa -> System.out.println(Arrays.toString(oa)));
 
-        // !!! Delete islemi SQL
+        // !!! Delete islemi SQL -> executeUpdate KAÇ RECORD DEĞİŞTİ ONU DÖNDÜRÜR.
 //        String sqlQuery1 = "DELETE FROM book07";
 //        int numOfDeletedRecords = session.createSQLQuery(sqlQuery1).executeUpdate();
 //        System.out.println("Silinen kayit sayisi : " + numOfDeletedRecords);
@@ -67,6 +67,7 @@ public class RunnerFetch07 {
 //        Student07 student2 = session.get(Student07.class, 1001);
 //        session.delete(student2);
 
+        //orphanRemoval tetiklemenin bir baska yolu?
         // student2.getBookList().set(0,null);  // 101 , 102 --> null , 102
 
         // !!! book ismi içinde "Book" geçen student kayıtlarını alalım ( HQL )
