@@ -29,7 +29,9 @@ public class RunnerFetch09 {
 
         session.close();
 
-        for (Book09 book: student.getBookList()) { // lAZY
+        //Eager yapıda tüm datayı cektiği icin session close olsa da dbye bir daha gitmeye gerek yoktu.
+        //Ama Lazy mantığı DB ye sürekli gidip gelmek isteyebilir. O yüzden session kapanırsa DB ye gidemez.
+        for (Book09 book: student.getBookList()) {
             System.out.println(book);
         }
 
