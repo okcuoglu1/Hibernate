@@ -25,7 +25,11 @@ public class Student09 {
     ManyToOne       --> EAGER
  */
 
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL , fetch = FetchType.EAGER)
+    // Cascade den dolayi @OneToMany iliskinin kurulabilmesi icin her iki entity class uzerinden
+    // setleme islemi yapmamiz gerekir, eger yapmazsak @JoinColum ile eklenen kolon null degerler ile dolar
+
+
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL  /*fetch = FetchType.EAGER*/)
     private List<Book09> bookList = new ArrayList<>();
 
     // !!! Getter- Setter

@@ -6,9 +6,9 @@ import javax.persistence.*;
 public class Student10 {
 
     /*
-   Oracle DB - PostgreSQL ---> Sequence ( kontrolü developera bırakır, Id üretilirken
+   Oracle DB - PostgreSQL kullanır ---> Sequence ( kontrolü developera bırakır, Id üretilirken
             başlangıç değeri veya kaç tane id cachelenecek bu gibi bilgileri developer setliyebilir)
-   MySQL - Microsoft SQL   ---> IDENTITY ( kontrol DB de , kendi yapısına göre ıd oluşturur,
+   MySQL - Microsoft SQL kullanır   ---> IDENTITY ( kontrol DB de , kendi yapısına göre ıd oluşturur,
             içlerindeki en basitidir)
 
    GenerationType.AUTO ---> Hibernate otomatik olarak kullanilan DB ye gore stratejiyi belirler
