@@ -17,7 +17,7 @@ public class Student10 {
  */
 
     @GeneratedValue(generator = "sequence" , strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name="sequence", // @GeneratedVAlue nun generator parametresi ile ayni isim olmali
+    @SequenceGenerator(name="sequence", // @GeneratedValue nun generator parametresi ile ayni isim olmali
             sequenceName = "student_seq", // DB de olusacak sequance ismi
             initialValue = 1000, // id lerim 1000 ile baslasin
             allocationSize = 10) // cache leme mekanizmasinda 10 adet id hazirda beklesin
@@ -29,7 +29,7 @@ public class Student10 {
 
     private int grade;
 
-    // !!! gETTER-sETTER
+    // !!! GETTER-sETTER
 
     public int getId() {
         return id;
