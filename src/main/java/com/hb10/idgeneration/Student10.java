@@ -9,18 +9,22 @@ public class Student10 {
    Oracle DB - PostgreSQL kullanır ---> Sequence ( kontrolü developera bırakır, Id üretilirken
             başlangıç değeri veya kaç tane id cachelenecek bu gibi bilgileri developer setliyebilir)
    MySQL - Microsoft SQL kullanır   ---> IDENTITY ( kontrol DB de , kendi yapısına göre ıd oluşturur,
-            içlerindeki en basitidir)
+            içlerindeki en basitidir) -->Kullanımı en yaygın standart da 1 den baslar devam eder.
 
    GenerationType.AUTO ---> Hibernate otomatik olarak kullanilan DB ye gore stratejiyi belirler
    GenerationType.TABLE ---> En yavaşı , oyüzden çok kullanılmıyor, çünkü id
             üretmek için ekstra tablo oluşturuyor
  */
 
+
+    //Silinen id ye geri dönemeyiz bir sonrakini alır mesela. 1-2-3-4(silindi)-5(yeni record idsi) --> 4e atamıyor.
     @GeneratedValue(generator = "sequence" , strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name="sequence", // @GeneratedValue nun generator parametresi ile ayni isim olmali
             sequenceName = "student_seq", // DB de olusacak sequance ismi
             initialValue = 1000, // id lerim 1000 ile baslasin
-            allocationSize = 10) // cache leme mekanizmasinda 10 adet id hazirda beklesin
+            allocationSize = 10) // cache leme mekanizmasinda 10 adet id hazirda beklesin.
+
+
     @Id
     private int id;
 
