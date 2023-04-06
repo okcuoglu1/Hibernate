@@ -14,6 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <hibernate.version>5.6.8.Final</hibernate.version>
         <postgresql.connecter.version>42.3.6</postgresql.connecter.version>
+        <ehcache.version>3.6.3</ehcache.version>
     </properties>
 
     <dependencies>
@@ -30,6 +31,23 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>${postgresql.connecter.version}</version>
+        </dependency>
+
+        <!-- SECOND LEVEL CACHE -->
+        <!-- BU KISIM EKLENDİ*************************************************************************-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-jcache</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <!-- SECOND LEVEL CACHE -->
+        <!-- BU KISIM EKLENDİ *************************************************************************-->
+        <dependency>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>${ehcache.version}</version>
+            <scope>runtime</scope>
         </dependency>
 
 

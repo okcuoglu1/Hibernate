@@ -22,13 +22,21 @@ public class RunnerFetch12 {
         //session.clear(); methodu first level cache i temizler.
 //       session.clear(); // 1.level cache etkinken bu satirla cache temizlenmis
 //                    // oluyor ve alttaki 2 satiri calistirdigimizda yeni query olusmak zorunda kaliyor
+
+
+
+        //************************************************************************************************
 //
-//
+//        //Burda first level cache calısıyor ve aynı datayı istediğimiz get sorgusunda hibernate tekrar DB ye gitmeyip(SELECT SORGUSU YAPMIYOR)
+          //CACHING yaptığı datayı direk bize veriyor.
+        //session.clear(); methodu cache edilen datayı temizler.
 //        System.out.println("ikinci get islemi 1 id li ogrenci icin : ");
 //        Student12 student2 = session.get(Student12.class,1L);
 
         tx.commit();
         session.close();
+
+
 
         Session session2 = sf.openSession();
         Transaction tx2 = session2.beginTransaction();

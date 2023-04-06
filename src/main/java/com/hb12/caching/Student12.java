@@ -1,6 +1,8 @@
 package com.hb12.caching;
 
 import javax.persistence.*;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.Cache;
 
 /*
 1)	First Level Cache --->
@@ -21,6 +23,8 @@ import javax.persistence.*;
  */
 
 @Entity
+@Cacheable
+@Cache(usage= CacheConcurrencyStrategy.READ_WRITE, region = "Student12")
 public class Student12 {
 
     @Id

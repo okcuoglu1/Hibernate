@@ -17,7 +17,7 @@ public class Student10 {
  */
 
 
-    //Silinen id ye geri dönemeyiz bir sonrakini alır mesela. 1-2-3-4(silindi)-5(yeni record idsi) --> 4e atamıyor.
+    //Silinen id ye geri dönemeyiz bir sonrakini alır mesela. 1-2-3-4(silindi)-5(yeni record idsi) --> 4 e atamıyor.
     @GeneratedValue(generator = "sequence" , strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name="sequence", // @GeneratedValue nun generator parametresi ile ayni isim olmali
             sequenceName = "student_seq", // DB de olusacak sequance ismi
