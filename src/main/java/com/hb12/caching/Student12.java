@@ -6,7 +6,7 @@ import javax.persistence.*;
 1)	First Level Cache --->
 			* defaultta açık geliyor , kapatma durumu yok
 			* Aynı session içinde kayıt alır
-			* session kapanınca içindejkiler silinir
+			* session kapanınca içindekiler silinir
 
 2) Second Level Cache --->
 			* Defaultta kapalıdır
