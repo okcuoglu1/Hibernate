@@ -56,6 +56,7 @@ public class RunnerFetch11 {
 
         // !!! CriteriaAPI ***************************************
         CriteriaBuilder cb = session.getCriteriaBuilder();
+        //Root objesinde belirttiğimiz Student11 classında CriteriaQuery objesi ile  createriaApi kullanacağımızı Hibernate'e söyledik.
         CriteriaQuery<Student11> criteriaQuery = cb.createQuery(Student11.class);
         //Hangi class üzerinden criteriaApi kullanıcaksak hibernate'e bunu Root objesiyle söylemiş oluyorum. from(Student11.class);
         Root<Student11> root = criteriaQuery.from(Student11.class);
@@ -91,13 +92,15 @@ public class RunnerFetch11 {
 //        resultList4.forEach(System.out::println);
 
         // !!! 5. örnek : id si 1 veya mathGrade i 75 den büyük olan recordu bulalım
+        //CriteriaApi icinde criteriaApi kullanmamızı sağlayan yapıdır.
+        //Genellikle or ve and  tasklerinde kullanılır.
         Long id = 1L ;
 
         Predicate predicateForName = cb.equal(root.get("id"),id);
         Predicate predicateForMathGrade = cb.greaterThan(root.get("mathGrade"), 75);
 
-        Predicate predicateStd = cb.or(predicateForName, predicateForMathGrade);
-        // Predicate predicateStd2 = cb.and(predicateForName, predicateForMathGrade);
+        Predicate predicateStd = cb.or(predicateForName, predicateForMathGrade); //or
+        // Predicate predicateStd2 = cb.and(predicateForName, predicateForMathGrade); //and
 
         criteriaQuery.where(predicateStd);
 
