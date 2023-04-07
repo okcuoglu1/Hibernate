@@ -48,7 +48,7 @@ public class RunnerFetch12 {
         tx2.commit();
         session2.close();
 
-        sf.close();
+        sf.close(); //->Session Factory de kapanırsa second level cache de kapanır icine aldıgı datalarda silinir.!!!
 
     }
 }

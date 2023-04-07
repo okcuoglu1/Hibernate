@@ -6,7 +6,7 @@ package com.hb13.get_load;
    			  nesne yoksa null döner
    			  nesnenin olduğundan emin değilseniz get() kullanın
    			  dönen nesneyi hemen kullanacaksam get() kullanılmalı
-   load() --> proxy nesne döndürür, gerçek nesnenin gölgesi ,
+   load() --> proxy(gölgesi,vekili) nesne döndürür, gerçek nesnenin gölgesi ,
    			  nesne yoksa exception fırlatır
    			  dönen nesne üzerinde delete yapılacaksa kullanılabilir
  */
@@ -58,7 +58,7 @@ public class RunnerFetch13 {
         Student13 student4 =  session.load(Student13.class, 100L);
         if(student4 != null) {
             System.out.println("Student ID : " + student4.getId());
-            System.out.println("Student Name : "+ student4.getName() );
+            System.out.println("Student Name : "+ student4.getName());
         }
 
         // !!! Peki load metodu nerede kullanılır ????
